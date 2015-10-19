@@ -4,8 +4,12 @@
 /* @var $content string */
 
 use yii\helpers\Html;
-use yii\bootstrap\Nav;
-use yii\bootstrap\NavBar;
+/*use yii\bootstrap\Nav;
+use yii\bootstrap\NavBar;*/
+
+use wii\materialize\Nav;
+use wii\materialize\NavBar;
+
 use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
 use common\widgets\Alert;
@@ -26,8 +30,64 @@ AppAsset::register($this);
 <?php $this->beginBody() ?>
 
 <div class="wrap">
+    <!--<nav class="white" role="navigation">
+        <div class="nav-wrapper container">
+            <a id="logo-container" href="#" class="brand-logo grey-text text-darken-3">Logo</a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="#" class="grey-text text-darken-3">Navbar Link</a></li>
+            </ul>
+
+            <ul id="nav-mobile" class="side-nav" style="left: -250px;">
+                <li><a href="#" class="grey-text text-darken-3">Navbar Link</a></li>
+            </ul>
+            <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+        </div>
+    </nav>-->
     <?php
     NavBar::begin([
+        'brandLabel' => 'NavBar Test',
+        'brandUrl' => Yii::$app->homeUrl,
+        'brandOptions' => [
+            'class' => 'grey-text text-darken-3',
+        ],
+        'wraperContainerOptions' => [
+            'class' => 'nav-wrapper container',
+        ],
+        'options' => [
+            'class' => 'white',
+            'role'  => 'navigation',
+        ],
+    ]);
+    echo Nav::widget([
+        'items' => [
+            [
+                'label' => 'Home',
+                'url' => ['/site/index'],
+                'linkOptions' => [
+                    'class' => 'grey-text text-darken-3',
+                ],
+            ],
+            [
+                'label' => 'About',
+                'url' => ['/site/about'],
+                'linkOptions' => [
+                    'class' => 'grey-text text-darken-3',
+                ],
+            ],
+            [
+                'label' => 'Contact',
+                'url' => ['/site/contact'],
+                'linkOptions' => [
+                    'class' => 'grey-text text-darken-3',
+                ],
+            ],
+        ],
+        'options' => [
+            'class' => 'right hide-on-med-and-down',
+        ],
+    ]);
+    NavBar::end();
+/*    NavBar::begin([
         'brandLabel' => 'My Company',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
@@ -54,7 +114,7 @@ AppAsset::register($this);
         'items' => $menuItems,
     ]);
     NavBar::end();
-    ?>
+    */?>
 
     <div class="container">
         <?= Breadcrumbs::widget([

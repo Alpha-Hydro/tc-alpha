@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "8580bd82955b1fbb80d47024e184056e",
-    "content-hash": "e1929a97e872bdbaacc8530468eccb67",
+    "hash": "66ecca95f44f629d3954fcdd67bd234d",
+    "content-hash": "8eeb2159bfec163fef50bbcef2ccba5f",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -608,6 +608,67 @@
     ],
     "packages-dev": [
         {
+            "name": "bower-asset/maza",
+            "version": "2.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wiisoft/maza.git",
+                "reference": "efcce4ceafef9181185556f3ea46da0b3e0c27af"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wiisoft/maza/zipball/efcce4ceafef9181185556f3ea46da0b3e0c27af",
+                "reference": "efcce4ceafef9181185556f3ea46da0b3e0c27af",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/jquery": ">=2.1.1"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": [
+                    "css/animate.css",
+                    "css/font-awesome.min.css",
+                    "css/materialize-fix.css",
+                    "fonts/FontAwesome.otf",
+                    "fonts/fontawesome-webfont.eot",
+                    "fonts/fontawesome-webfont.svg",
+                    "fonts/fontawesome-webfont.ttf",
+                    "fonts/fontawesome-webfonat.woff",
+                    "fonts/fontawesome-webfont.woff2"
+                ],
+                "bower-asset-ignore": [
+                    ".gitignore",
+                    "tmp/",
+                    "favicon.ico",
+                    "bower.json",
+                    "README.md",
+                    "image/",
+                    "**/*.html",
+                    "**/*.zip",
+                    "**/*.txt",
+                    "**/.*",
+                    "node_mod`ules",
+                    "bower_components",
+                    "test",
+                    "tests"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "It's a fork MaterializeCSS framwork with Font Awesome anf other upgrades",
+            "keywords": [
+                "FontAwesome",
+                "MaterialDesign",
+                "Materialize",
+                "MaterializeCSS",
+                "css",
+                "js",
+                "sass"
+            ]
+        },
+        {
             "name": "bower-asset/typeahead.js",
             "version": "v0.10.5",
             "source": {
@@ -719,6 +780,59 @@
             ],
             "description": "A comprehensive library for generating differences between two hashable objects (strings or arrays).",
             "time": "2013-11-01 13:02:21"
+        },
+        {
+            "name": "wiisoft/yii2-materialize",
+            "version": "1.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wiisoft/yii2-materialize.git",
+                "reference": "e34e99cdccc913717548afc61df6dcf6486edf74"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wiisoft/yii2-materialize/zipball/e34e99cdccc913717548afc61df6dcf6486edf74",
+                "reference": "e34e99cdccc913717548afc61df6dcf6486edf74",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/maza": "@dev",
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "asset-installer-paths": {
+                    "npm-asset-library": "vendor/npm",
+                    "bower-asset-library": "vendor/bower"
+                },
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "wii\\materialize\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "wiisoft",
+                    "email": "webdev@webmaker.today"
+                }
+            ],
+            "description": "This is a set of widgets based on an improved version of MAZA CSS framework - MaterializeCSS framework for Yii2",
+            "keywords": [
+                "material-design",
+                "materialize",
+                "yii2",
+                "yii2-design",
+                "yii2-extensions"
+            ],
+            "time": "2015-07-22 14:45:55"
         },
         {
             "name": "yiisoft/yii2-codeception",
