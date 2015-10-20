@@ -43,6 +43,16 @@ return [
                 ],
                 'yii\bootstrap\BootstrapPluginAsset' => false,
                 'yii\bootstrap\BootstrapAsset' => false,
+                'wii\materialize\MaterializeAsset' => [
+                    'sourcePath' => null,
+                    'css' => [
+                        '//cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css',
+                        '//fonts.googleapis.com/icon?family=Material+Icons',
+                    ],
+                    'js' => [
+                        '//cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js',
+                    ],
+                ],
             ],
         ],
     ],

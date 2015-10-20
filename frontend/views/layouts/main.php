@@ -4,12 +4,8 @@
 /* @var $content string */
 
 use yii\helpers\Html;
-/*use yii\bootstrap\Nav;
-use yii\bootstrap\NavBar;*/
-
 use wii\materialize\Nav;
 use wii\materialize\NavBar;
-
 use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
 use common\widgets\Alert;
@@ -30,22 +26,9 @@ AppAsset::register($this);
 <?php $this->beginBody() ?>
 
 <div class="wrap">
-    <!--<nav class="white" role="navigation">
-        <div class="nav-wrapper container">
-            <a id="logo-container" href="#" class="brand-logo grey-text text-darken-3">Logo</a>
-            <ul class="right hide-on-med-and-down">
-                <li><a href="#" class="grey-text text-darken-3">Navbar Link</a></li>
-            </ul>
-
-            <ul id="nav-mobile" class="side-nav" style="left: -250px;">
-                <li><a href="#" class="grey-text text-darken-3">Navbar Link</a></li>
-            </ul>
-            <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-        </div>
-    </nav>-->
     <?php
     NavBar::begin([
-        'brandLabel' => 'NavBar Test',
+        'brandLabel' => Html::img('/images/logo_nav_gray_cart.png'),
         'brandUrl' => Yii::$app->homeUrl,
         'brandOptions' => [
             'class' => 'grey-text text-darken-3',
@@ -61,60 +44,52 @@ AppAsset::register($this);
     echo Nav::widget([
         'items' => [
             [
-                'label' => 'Home',
+                'label' => 'Главная',
                 'url' => ['/site/index'],
                 'linkOptions' => [
                     'class' => 'grey-text text-darken-3',
                 ],
             ],
             [
-                'label' => 'About',
+                'label' => 'О компании',
                 'url' => ['/site/about'],
                 'linkOptions' => [
                     'class' => 'grey-text text-darken-3',
                 ],
             ],
             [
-                'label' => 'Contact',
+                'label' => 'Контакты',
                 'url' => ['/site/contact'],
                 'linkOptions' => [
                     'class' => 'grey-text text-darken-3',
                 ],
             ],
+            [
+                'label' => '8(812)921-77-66',
+                'url' => false,
+                'linkOptions' => [
+                    'class' => ' light-green-text',
+                ],
+                'options' => [
+                    'class' => 'top-contact-tel'
+                ]
+            ],
+        ],
+        'buttonCollapse' => true,
+        'buttonCollapseLabel' => '<i class="material-icons">menu</i>',
+        'buttonCollapseOptions' => [
+            'class' => 'grey-text text-darken-3',
         ],
         'options' => [
             'class' => 'right hide-on-med-and-down',
         ],
     ]);
     NavBar::end();
-/*    NavBar::begin([
-        'brandLabel' => 'My Company',
-        'brandUrl' => Yii::$app->homeUrl,
-        'options' => [
-            'class' => 'navbar-inverse navbar-fixed-top',
-        ],
-    ]);
-    $menuItems = [
-        ['label' => 'Home', 'url' => ['/site/index']],
-        ['label' => 'About', 'url' => ['/site/about']],
-        ['label' => 'Contact', 'url' => ['/site/contact']],
-    ];
-    if (Yii::$app->user->isGuest) {
-        $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
-        $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
-    } else {
-        $menuItems[] = [
-            'label' => 'Logout (' . Yii::$app->user->identity->username . ')',
-            'url' => ['/site/logout'],
-            'linkOptions' => ['data-method' => 'post']
-        ];
-    }
-    echo Nav::widget([
-        'options' => ['class' => 'navbar-nav navbar-right'],
-        'items' => $menuItems,
-    ]);
-    NavBar::end();
-    */?>
+    ?>
+
+    <?php if($this->context->route == 'site/index'): ?>
+        <div class="parallax-container light-green"></div>
+    <?php endif; ?>
 
     <div class="container">
         <?= Breadcrumbs::widget([
@@ -134,6 +109,5 @@ AppAsset::register($this);
 </footer>
 
 <?php $this->endBody() ?>
-<!--</body>-->
 </html>
 <?php $this->endPage() ?>
