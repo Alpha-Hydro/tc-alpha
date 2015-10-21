@@ -1,0 +1,3 @@
+@import "compass/utilities/sprites";
+$main-menu: sprite-map("main-menu/*.png", $position: 100%, $spacing: 5px, $repeat: no-repeat);
+$overlay: sprite-map("overlay/*.png", $position: 100%, $spacing: 5px, $repeat: no-repeat);

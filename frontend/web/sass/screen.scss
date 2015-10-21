@@ -1,6 +1,17 @@
-@import "compass";
+@import "compass/utilities";
+@import "compass/layout";
+@import "compass/css3";
 
+@import "vendors/corpus_variables";
+
+@import "base/variables";
+@import "base/base";
+
+@import "utils/sprite";
+
+@import "layouts/layout";
 @import "layouts/main_menu";
+@import "layouts/footer";
 
 @import "pages/home";
 

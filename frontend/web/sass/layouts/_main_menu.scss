@@ -1,3 +1,30 @@
+.brand-logo-image{
+  display: block;
+  width: 168px;
+  height: 64px;
+  text-indent: -1000px;
+  .light-green &{
+    background:sprite($main-menu, logo_nav_white);
+  }
+  .white &{
+    background:sprite($main-menu, logo_nav_gray_cart);
+  }
+}
+.light-green{
+
+}
+.white{
+  a {
+    color: #424242;
+  }
+  .top-contact-tel{
+    a {
+      color: #F57C00 !important;
+
+    }
+  }
+}
+
 .top-contact-tel{
   &:hover,
   &:active{
