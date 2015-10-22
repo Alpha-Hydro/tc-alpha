@@ -18,6 +18,9 @@ use yii\filters\AccessControl;
  */
 class SiteController extends Controller
 {
+    public $pageDescription = '';
+    public $pageImage = '';
+
     /**
      * @inheritdoc
      */
@@ -138,6 +141,7 @@ class SiteController extends Controller
      */
     public function actionAbout()
     {
+        $this->pageDescription = 'This is the About page';
         return $this->render('about');
     }
 

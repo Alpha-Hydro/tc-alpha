@@ -4,11 +4,15 @@
 
 @import "vendors/corpus_variables";
 
+@import "utils/sprite";
+@import "utils/opacity";
+@import "utils/position";
+@import "utils/box_shadow";
+
 @import "base/variables";
 @import "base/base";
 
-@import "utils/sprite";
-
+@import "layouts/header";
 @import "layouts/layout";
 @import "layouts/main_menu";
 @import "layouts/footer";
