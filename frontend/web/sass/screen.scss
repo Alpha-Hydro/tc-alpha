@@ -4,10 +4,13 @@
 
 @import "vendors/corpus_variables";
 
+@import "utils/mixins";
 @import "utils/sprite";
 @import "utils/opacity";
 @import "utils/position";
 @import "utils/box_shadow";
+@import "utils/text_shadow";
+@import "utils/color";
 
 @import "base/variables";
 @import "base/base";
@@ -18,4 +21,3 @@
 @import "layouts/footer";
 
 @import "pages/home";
-

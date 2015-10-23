@@ -141,7 +141,7 @@ class SiteController extends Controller
      */
     public function actionAbout()
     {
-        $this->pageDescription = 'This is the About page';
+        $this->pageDescription = 'Уважаемые посетители интернет сайта Торгового дома "Альфа"! Мы рады приветствовать Вас на своем интернет ресурсе.';
         return $this->render('about');
     }
 

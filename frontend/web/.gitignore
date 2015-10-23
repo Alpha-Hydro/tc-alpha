@@ -1,2 +1,6 @@
+### Sass template
+.sass-cache/
+*.css.map
+
 /index.php
 /index-test.php

@@ -25,5 +25,6 @@ class AppAsset extends AssetBundle
     public $depends = [
         'yii\web\YiiAsset',
         'wii\materialize\MaterializeAsset',
+        'rmrevin\yii\fontawesome\AssetBundle'
     ];
 }

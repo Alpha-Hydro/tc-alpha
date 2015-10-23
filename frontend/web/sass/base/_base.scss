@@ -1,3 +1,6 @@
+html{
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 body{
   display: flex;
   min-height: 100vh;
@@ -8,4 +11,10 @@ main {
 }
 p{
   @extend .mb1;
+  blockquote &{
+    @extend .mb0;
+  }
+}
+strong{
+  font-weight: 600;
 }

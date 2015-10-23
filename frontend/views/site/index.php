@@ -12,6 +12,6 @@ $this->title = 'Торговый дом "Альфа"';
         <p class="flow-text">ТД "Альфа" это торговый центр площадью 1500 кв.м., на которой расположено множество больших и маленьких магазинов с товарами на любой вкус от продуктового магазина до парикмахерской, от аптеки до магазина игрушек.</p>
     </div>
     <div class="card-action center-align">
-        <a class="waves-effect waves-light btn-large green darken-1 white-text" href="<?= Url::toRoute('/site/about');?>">Узнать больше<i class="material-icons right">send</i></a>
+        <a class="waves-effect waves-light btn-large white-text" href="<?= Url::toRoute('/site/about');?>">Узнать больше<i class="material-icons right">send</i></a>
     </div>
 </div>

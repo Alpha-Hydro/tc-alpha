@@ -8,14 +8,16 @@
     <div class="row">
         <div class="col s8">
             <h1><?= Html::encode($this->title) ?></h1>
-            <p><?= Html::encode($this->context->pageDescription)?></p>
+            <blockquote>
+                <p><?= Html::encode($this->context->pageDescription)?></p>
+            </blockquote>
         </div>
         <div class="col s4">
             <div class="row mt2">
-                <div class="col s12">
+                <div class="col l10 offset-l1">
                     <div class="card z-depth-1">
                         <div class="card-image">
-                            <?= Html::img('https://unsplash.it/g/410/250/?random',['class' => 'responsive-img'])?>
+                            <?= Html::img('/images/aaa250.jpg',['class' => 'responsive-img'])?>
                         </div>
                     </div>
                 </div>

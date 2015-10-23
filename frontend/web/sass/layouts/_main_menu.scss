@@ -4,7 +4,10 @@
   height: 64px;
   text-indent: -1000px;
   .light-green &{
-    background:sprite($main-menu, logo_nav_white);
+    background:sprite($main-menu, logo_nav_white_cart);
+  }
+  .transparent &{
+    background:sprite($main-menu, logo_nav_white_cart);
   }
   .white &{
     background:sprite($main-menu, logo_nav_gray_cart);

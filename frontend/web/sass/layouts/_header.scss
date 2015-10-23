@@ -21,6 +21,9 @@
 .page-header{
   height: $height-page-header;
   .card-image{
+    img{
+      min-height: 150px;
+    }
     min-height: 150px;
     min-width: 250px;
   }
