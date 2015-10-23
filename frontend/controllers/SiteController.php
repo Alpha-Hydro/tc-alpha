@@ -118,6 +118,7 @@ class SiteController extends Controller
      */
     public function actionContact()
     {
+        $this->pageDescription = 'Если у вас есть деловое предложение или другие вопросы, пожалуйста, заполните форму на странице, чтобы связаться с нами.';
         $model = new ContactForm();
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             if ($model->sendEmail(Yii::$app->params['adminEmail'])) {

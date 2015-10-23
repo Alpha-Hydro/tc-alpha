@@ -1,0 +1,16 @@
+.has-error{
+  label{
+    &::after{
+      content: attr(data-error);
+      color: #F44336;
+      opacity: 1;
+    }
+  }
+}
+.input-field label{
+  width: 100%;
+  &::after{
+    width: 80%;
+    right: 100%;
+  }
+}
