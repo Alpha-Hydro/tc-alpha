@@ -3,15 +3,8 @@
   (function($) {
     var form, textarea;
     textarea = $('.materialize-textarea');
-    textarea.val('New Text');
     textarea.trigger('autoresize');
-    form = $('form');
-    return form.validate({
-      errorClass: 'invalid',
-      errorPlacement: function(error, element) {
-        return element.next("label").attr("data-error", error.contents().text());
-      }
-    });
+    return form = $('form');
   })(jQuery);
 
 }).call(this);

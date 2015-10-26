@@ -1,16 +1,10 @@
-.has-error{
-  label{
-    &::after{
-      content: attr(data-error);
-      color: #F44336;
-      opacity: 1;
-    }
-  }
+.help-block-error{
+  font-size: 80%;
+  color: #F44336;
 }
-.input-field label{
-  width: 100%;
-  &::after{
-    width: 80%;
-    right: 100%;
-  }
+
+textarea:required:focus:invalid,
+input:required:focus:invalid{
+  border-bottom: 1px solid #F44336;
+  box-shadow: 0 1px 0 0 #F44336;
 }

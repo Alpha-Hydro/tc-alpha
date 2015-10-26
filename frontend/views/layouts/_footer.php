@@ -3,7 +3,7 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use rmrevin\yii\fontawesome\FA;
 ?>
-<footer class="page-footer top-shadow grey lighten-3 grey-text text-darken-3 pt0 mt0">
+<footer class="page-footer top-shadow grey lighten-3 grey-text text-lighten-1 pt0 mt0">
     <div class="container">
         <div class="row">
             <div class="col l6 s12">
@@ -23,8 +23,8 @@ use rmrevin\yii\fontawesome\FA;
                 <h5>Ссылки</h5>
                 <div class="divider mb1"></div>
                 <ul>
-                    <li><?=Html::a('О компании','/site/about',['class' => 'grey-text text-darken-1'])?></li>
-                    <li><?=Html::a('Контакты','/site/contact',['class' => 'grey-text text-darken-1'])?></a></li>
+                    <li><?=Html::a('О компании','/site/about',['class' => 'grey-text text-lighten-1'])?></li>
+                    <li><?=Html::a('Контакты','/site/contact',['class' => 'grey-text text-lighten-1'])?></a></li>
                 </ul>
                 <div class="divider mt2 mb1"></div>
                 <ul>

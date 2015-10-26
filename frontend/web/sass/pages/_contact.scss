@@ -1,0 +1,8 @@
+.contact-card{
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  .card-panel{
+    flex: 1 0 auto;
+  }
+}
