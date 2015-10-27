@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d281b66747049d441a2f88619be17a86",
-    "content-hash": "8665c8dbcfffe11d8634d71f5a916cb7",
+    "hash": "6a22ca343c8764a7be0bdc554594902b",
+    "content-hash": "75f7b732a62955dcded42408a6fe9ea7",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -609,23 +609,23 @@
     "packages-dev": [
         {
             "name": "bower-asset/fontawesome",
-            "version": "v4.3.0",
+            "version": "v4.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FortAwesome/Font-Awesome.git",
-                "reference": "41b9ed01103e6820c3cb043ba7ddab30ecd3f4c0"
+                "reference": "e554555d73a44e0a7d11b0361ad7a5325a5f551c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FortAwesome/Font-Awesome/zipball/41b9ed01103e6820c3cb043ba7ddab30ecd3f4c0",
-                "reference": "41b9ed01103e6820c3cb043ba7ddab30ecd3f4c0",
+                "url": "https://api.github.com/repos/FortAwesome/Font-Awesome/zipball/e554555d73a44e0a7d11b0361ad7a5325a5f551c",
+                "reference": "e554555d73a44e0a7d11b0361ad7a5325a5f551c",
                 "shasum": ""
             },
             "type": "bower-asset-library",
             "extra": {
                 "bower-asset-main": [
-                    "./css/font-awesome.css",
-                    "./fonts/*"
+                    "less/font-awesome.less",
+                    "scss/font-awesome.scss"
                 ],
                 "bower-asset-ignore": [
                     "*/.*",
@@ -820,20 +820,20 @@
         },
         {
             "name": "rmrevin/yii2-fontawesome",
-            "version": "2.10.3",
+            "version": "2.12.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rmrevin/yii2-fontawesome.git",
-                "reference": "ce4dd62a048090f3d98822d4bc9401bfcdde1f98"
+                "reference": "51d33ec9d1d7edab2166f1d42668c1bc8d28c068"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rmrevin/yii2-fontawesome/zipball/ce4dd62a048090f3d98822d4bc9401bfcdde1f98",
-                "reference": "ce4dd62a048090f3d98822d4bc9401bfcdde1f98",
+                "url": "https://api.github.com/repos/rmrevin/yii2-fontawesome/zipball/51d33ec9d1d7edab2166f1d42668c1bc8d28c068",
+                "reference": "51d33ec9d1d7edab2166f1d42668c1bc8d28c068",
                 "shasum": ""
             },
             "require": {
-                "bower-asset/fontawesome": "4.3.*",
+                "bower-asset/fontawesome": "4.4.*",
                 "php": ">=5.4.0",
                 "yiisoft/yii2": "2.0.*"
             },
@@ -868,7 +868,7 @@
                 "font",
                 "yii"
             ],
-            "time": "2015-06-23 13:06:14"
+            "time": "2015-08-15 16:50:16"
         },
         {
             "name": "wiisoft/yii2-materialize",
