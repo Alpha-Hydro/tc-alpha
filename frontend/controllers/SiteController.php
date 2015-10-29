@@ -121,10 +121,10 @@ class SiteController extends Controller
         $this->pageDescription = 'Если у вас есть деловое предложение или другие вопросы, пожалуйста, заполните форму на странице, чтобы связаться с нами.';
         $model = new ContactForm();
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-            if ($model->sendEmail(Yii::$app->params['adminEmail'])) {
-                Yii::$app->session->setFlash('success', 'Thank you for contacting us. We will respond to you as soon as possible.');
+            if ($model->sendEmail(Yii::$app->params['infoEmail'])) {
+                Yii::$app->session->setFlash('success', 'Ваше сообщение было отправлено.<br/> Наши сотрудники в кратчайшее время свяжуться с Вами по электронной почте, которая была указана в форме. Благодарим Вас за обращение к нам.');
             } else {
-                Yii::$app->session->setFlash('error', 'There was an error sending email.');
+                Yii::$app->session->setFlash('error', 'Oшибка отправки электронной почты.');
             }
 
             return $this->refresh();

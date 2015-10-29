@@ -116,10 +116,7 @@ $this->registerJsFile('/js/contact.min.js', ['depends' => ['yii\web\YiiAsset','w
         </div>
     </div>
 </div>
-<?= ContactAlert::widget([
-    'closeButton' => false,
-    'body' => 'Say hello...',
-]) ?>
+<?= ContactAlert::widget() ?>
 
 <!--<div id="modal1" class="modal">
     <div class="modal-content">

@@ -8,109 +8,64 @@
 namespace common\widgets;
 
 use Yii;
-use yii\bootstrap\Widget;
+//use yii\bootstrap\Widget;
+use wii\materialize\Widget;
+//use yii\base\Widget;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
+use yii\web\View;
 
 class ContactAlert extends Widget
 {
-    /**
-     * @var string the body content in the alert component. Note that anything between
-     * the [[begin()]] and [[end()]] calls of the Alert widget will also be treated
-     * as the body content, and will be rendered before this.
-     */
-    public $body;
-    /**
-     * @var array the options for rendering the close button tag.
-     * The close button is displayed in the header of the modal window. Clicking
-     * on the button will hide the modal window. If this is false, no close button will be rendered.
-     *
-     * The following special options are supported:
-     *
-     * - tag: string, the tag name of the button. Defaults to 'button'.
-     * - label: string, the label of the button. Defaults to '&times;'.
-     *
-     * The rest of the options will be rendered as the HTML attributes of the button tag.
-     * Please refer to the [Alert documentation](http://getbootstrap.com/components/#alerts)
-     * for the supported HTML attributes.
-     */
-    public $closeButton = [];
+    public $message;
+
+    public $headMessage;
+
+    public $wrapOptions = [];
 
 
-    /**
-     * Initializes the widget.
-     */
     public function init()
     {
         parent::init();
 
-        $this->initOptions();
+        $this->clientOptions = false;
+        Html::addCssClass($this->options, 'modal');
 
-        echo Html::beginTag('div', $this->options) . "\n";
-        echo $this->renderBodyBegin() . "\n";
+        $session = \Yii::$app->session;
+        $flashes = $session->getAllFlashes();
+        if(!empty($flashes)){
+            foreach ($flashes as $type => $message) {
+                Html::addCssClass($this->options, $type);
+                $this->message = $message;
+                if($type !== 'error')
+                    $this->headMessage = ($type !== 'error')?'Ваше сообщение отправлено':'Ошибка';
+
+                $session->removeFlash($type);
+            }
+            $this->view->registerJs('$(".modal").openModal()',View::POS_END);
+        }
     }
 
-    /**
-     * Renders the widget.
-     */
-    public function run()
-    {
-        echo "\n" . $this->renderBodyEnd();
-        echo "\n" . Html::endTag('div');
-
+    public function run(){
+        return Html::tag('div', $this->renderBodyBegin(), $this->options);
     }
 
-    /**
-     * Renders the close button if any before rendering the content.
-     * @return string the rendering result
-     */
     protected function renderBodyBegin()
     {
-        return $this->renderCloseButton();
+        $body = Html::tag('div', $this->renderContent(), ['class' => 'modal-content']);
+        $body .= Html::tag('div',$this->renderFooter(),['class'=>'modal-footer']);
+        return $body;
     }
 
-    /**
-     * Renders the alert body (if any).
-     * @return string the rendering result
-     */
-    protected function renderBodyEnd()
+    protected function renderContent()
     {
-        return $this->body . "\n";
+        $content = Html::tag('h4',$this->headMessage);
+        $content .= Html::tag('p',$this->message);
+        return $content;
     }
 
-    /**
-     * Renders the close button.
-     * @return string the rendering result
-     */
-    protected function renderCloseButton()
+    protected function renderFooter()
     {
-        if (($closeButton = $this->closeButton) !== false) {
-            $tag = ArrayHelper::remove($closeButton, 'tag', 'button');
-            $label = ArrayHelper::remove($closeButton, 'label', '&times;');
-            if ($tag === 'button' && !isset($closeButton['type'])) {
-                $closeButton['type'] = 'button';
-            }
-
-            return Html::tag($tag, $label, $closeButton);
-        } else {
-            return null;
-        }
-    }
-
-    /**
-     * Initializes the widget options.
-     * This method sets the default values for various options.
-     */
-    protected function initOptions()
-    {
-        Html::addCssClass($this->options, ['modal', $this->options['id']]);
-
-        if ($this->closeButton !== false) {
-            $this->closeButton = array_merge([
-                'data-dismiss' => 'alert',
-                'aria-hidden' => 'true',
-                'class' => 'close',
-            ], $this->closeButton);
-        }
+        return Html::a('OK','#!',['class'=>'modal-action modal-close waves-effect waves-green btn']);
     }
 }
